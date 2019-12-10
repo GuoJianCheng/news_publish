@@ -3,8 +3,9 @@ public class FirstClass {
         System.out.println("hello Git");
     }
 
-    public void test(){
-        int i = 0;
+    public int test(int i){
+        i = 0;
         i += 10;
+        return i;
     }
 }
