@@ -1,0 +1,29 @@
+﻿.pagination {
+  padding: 20px 0 0 0;
+  text-align: center;
+  font-size: 14px;
+}
+.pagination a {
+  display: inline-block;
+  margin: 0 5px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #eee;
+  padding: 0 5px;
+  border-radius: 0.3rem;
+}
+.pagination a:hover {
+  border: 1px solid #ddd;
+  background-color: rgba(153, 153, 153, 0.02);
+}
+.pagination a.active {
+  color: #cd0104;
+  font-weight: 600;
+  border-color: rgba(205, 1, 4, 0.1);
+  background-color: rgba(205, 1, 4, 0.05);
+}
+.pagination a.disabled {
+  color: #999999;
+  border-color: rgba(153, 153, 153, 0.05);
+  background-color: rgba(153, 153, 153, 0.05);
+}

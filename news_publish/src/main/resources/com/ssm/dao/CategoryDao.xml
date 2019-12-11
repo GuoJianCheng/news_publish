@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.CategoryDao">
+	<!--查询新闻类别集合列表 -->
+	<select id="selectCategoryList" resultType="Category">
+		select * from t_category 
+	</select>
+	<!--通过categoryId查询新闻类别 -->
+	<select id="getCategoryById" parameterType="Integer" resultType="Category">
+		select * from t_category where categoryId=#{categoryId}
+	</select>
+</mapper>

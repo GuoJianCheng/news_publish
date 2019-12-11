@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.RoleDao">
+	<!--查询角色集合列表 -->
+	<select id="selectRoleList" resultType="Role">
+		select roleId,roleName from t_role 
+	</select>
+	<!--一对多：查看某一角色及其关联的用户
+			注意：当关联查询出的列名相同，则需要使用别名区分  -->
+	<select id="selectRoleWithUsers" parameterType="Integer"
+		resultMap="RoleWithUsersResult">
+		select r.*,u.userId,u.userName, u.loginName,u.password,u.tel,u.registerTime,u.status
+		from t_role r,t_user u
+		 where r.roleId=u.roleId and r.roleId=#{roleId}
+	</select>
+	<resultMap type="Role" id="RoleWithUsersResult">
+		<id property="roleId" column="roleId" />
+		<result property="roleName" column="roleName" />
+		<!--一对多关联映射：collection
+			ofType表示属性集合中元素的类型List<User>属性即User类  -->
+		<collection property="userList" ofType="User">
+			<id property="userId" column="userId" />
+			<result property="userName" column="userName" />
+			<result property="loginName" column="loginName" />
+			<result property="password" column="password" />
+			<result property="tel" column="tel" />
+			<result property="registerTime" column="registerTime" />
+			<result property="status" column="status" />
+		</collection>
+	</resultMap>
+</mapper>

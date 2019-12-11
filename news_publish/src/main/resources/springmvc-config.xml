@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!--指定需要扫描的包 -->
+    <context:component-scan base-package="com.ssm.web.controller"/>
+    <!-- 配置注解驱动 -->
+    <mvc:annotation-driven/>
+    <!-- 配置静态资源的访问映射，此配置中的文件，将不被前端控制器拦截 -->
+    <mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
+    <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
+    <mvc:resources location="/images/" mapping="/images/**"></mvc:resources>
+    <!-- 定义视图解析器 -->
+    <bean id="viewResoler" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 设置前缀 -->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!-- 设置后缀 -->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <!-- 使用bean直接定义在<mvc:interceptors>下面的Interceptor将拦截所有请求 -->
+        <!-- <bean class="com.ssm.interceptor.LoginInterceptor" /> -->
+        <mvc:interceptor>
+            <!-- 配置拦截器作用的路径 -->
+            <mvc:mapping path="/**"/>
+            <!-- 配置不需要拦截器作用的路径 -->
+            <mvc:exclude-mapping path="/index.action"/>
+            <mvc:exclude-mapping path="/findNewsByCategoryIdPage.action"/>
+            <mvc:exclude-mapping path="/findFrontNewsByNewsId.action"/>
+            <bean class="com.ssm.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans>

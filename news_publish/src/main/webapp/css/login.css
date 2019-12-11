@@ -1,0 +1,164 @@
+body{
+	padding:0;
+	margin:0;
+	/* background:url('../images/gds.jpg') no-repeat; */
+	background-attachment:fixed;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/background.jpg', sizingMethod='scale');
+    -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/background.jpg', sizingMethod='scale');
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
+a{
+	text-decoration: none;
+}
+.login{
+	width:400px;
+	/*height:500px;*/
+	margin: 20px auto;
+	background:#FFFFFF;
+}
+.header{
+	height:50px;
+	border-bottom:1px solid #e2e2e2;
+	position:relative;
+	font-family:"Microsoft Yahei";
+}
+.header .switch{
+	height:45px;
+	position:absolute;
+	left:60px;
+	bottom:0;
+	font-size:16px;
+}
+.header .switch{
+	margin-right:85px;
+}
+.header .switch .switch_login{
+	margin-right: 85px;
+	color:#333;
+	display:inline-block;
+	height:45px;
+	line-height:45px;
+	outline:none;
+	*hide-focus:expression(this.hideFocus=true);
+}
+/*.switch_login2{
+	color:#333;
+}*/
+.header .switch .switch_regist{
+	color:#999;
+	display:inline-block;
+	height:45px;
+	line-height:45px;
+	outline:none;
+	*hide-focus:expression(this.hideFocus=true);
+}
+.header .switch .switch_login:hover{
+	text-decoration:none;
+}
+.header .switch .switch_regist:hover{
+	color:#333;
+	text-decoration:none;
+}
+.switch_bottom{
+	position:absolute;
+	bottom:-1px;_bottom:-2px;
+	border-bottom:2px solid #848484;
+}
+.qlogin{
+	position:relative;
+	overflow: hidden;
+	display:block;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+.web_login {
+	width:370px;
+	position:relative;
+	padding-bottom: 20px;
+}
+.qregist{
+
+	margin-top: 30px;
+}
+.web_regist {
+	padding-bottom: 20px;
+	width:370px;
+	position:relative;
+}
+
+.uname{
+	width:360px;
+	height:40px;
+	margin-bottom: 20px;
+}
+.uname .input-group-addon{
+	width:40px;
+	height:40px;
+	float:left;
+	padding:0;
+	border-radius: 1px;
+}
+.uname .input-group-addon img{
+	width:30px;
+	height:30px;	
+	/*float:left;*/
+	/*line-height: 30px;*/
+	margin-top: 6px;
+	
+}
+.uname .form-control{
+	width:300px;
+	height:40px;
+	float:left;
+	border-radius: 1px;
+}
+
+.upwd{
+	width:360px;
+	height:40px;
+}
+.upwd .input-group-addon{
+	width:40px;
+	height:40px;
+	float:left;
+	padding:0;
+	border-radius: 1px;
+}
+.upwd .input-group-addon img{
+	width:20px;
+	height:20px;	
+	/*float:left;*/
+	/*line-height: 30px;*/
+	margin-top: 10px;
+	
+}
+.upwd .form-control{
+	width:300px;
+	height:40px;
+	float:left;
+	border-radius: 1px;
+}
+
+
+.textbox{
+	width:360px;
+	height:40px;
+	margin-bottom: 18px;
+}
+.textbox label{
+	width:80px;
+	height:40px;
+	float:left;
+	line-height:40px;
+	text-align: right;
+	font-size: 16px;
+	font-weight: normal;
+}
+.textbox .form-control{
+	float:left;
+	width:250px;
+	height:40px;
+	border-radius: 1px;
+}
